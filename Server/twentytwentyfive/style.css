@@ -1,0 +1,357 @@
+/*
+Theme Name: Twenty Twenty-Five
+Theme URI: https://wordpress.org/themes/twentytwentyfive/
+Author: the WordPress team
+Author URI: https://wordpress.org
+Description: Twenty Twenty-Five emphasizes simplicity and adaptability. It offers flexible design options, supported by a variety of patterns for different page types, such as services and landing pages, making it ideal for building personal blogs, professional portfolios, online magazines, or business websites. Its templates cater to various blog styles, from text-focused to image-heavy layouts. Additionally, it supports international typography and diverse color palettes, ensuring accessibility and customization for users worldwide.
+Requires at least: 6.7
+Tested up to: 6.8
+Requires PHP: 7.2
+Version: 1.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentytwentyfive
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
+*/
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 1px !important;
+	text-underline-offset: .1em;
+}
+
+/* Focus styles */
+:where(.wp-site-blocks *:focus) {
+	outline-width: 2px;
+	outline-style: solid;
+}
+
+/* Increase the bottom margin on submenus, so that the outline is visible. */
+.wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child) {
+	margin-bottom: 3px;
+}
+
+/* Increase the outline offset on the parent menu items, so that the outline does not touch the text. */
+.wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content {
+	outline-offset: 4px;
+}
+
+/* Remove outline offset from the submenus, otherwise the outline is visible outside the submenu container. */
+.wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	outline-offset: 0;
+}
+
+/*
+ * Progressive enhancement to reduce widows and orphans
+ * https://github.com/WordPress/gutenberg/issues/55190
+ */
+h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption, p {
+	text-wrap: pretty;
+}
+
+/*
+ * Change the position of the more block on the front, by making it a block level element.
+ * https://github.com/WordPress/gutenberg/issues/65934
+*/
+.more-link {
+	display: block;
+}
+
+
+/*------------------------------------*\
+    GLOBAL STYLES
+    
+/* */
+
+html, body {
+    margin: 0;
+    padding: 0em;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    background-color: #424549;
+    color: #f8f9fa;
+}
+
+
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 8em;
+    background-color: #36393e;
+  }
+
+  .site-info {
+    font-size: 0.60rem;
+  }
+
+  .header-logo-and-title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .site-logo {
+    height: 60px;
+    margin-right: 1rem;
+  }
+  
+  .main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .main-nav a {
+    text-decoration: none;
+    color: #f8f9fa;
+    font-weight: bold;
+  }
+  .main-nav a:hover {
+    text-decoration: underline;
+  }
+
+
+
+
+/* footer */
+footer {
+    background-color: #282b30;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.footer-logo img {
+    height: 70px;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer-nav ul {
+    list-style: none;
+    margin: 2rem 0 1rem 0;
+    padding: 0;
+    display: inline-flex;
+    gap: 1.5rem;
+}
+
+.footer-nav a {
+    color: #f8f9fa;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+footer .copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+
+
+
+/*fORSIDE*/
+.front-page-content {
+    text-align: center;
+    padding-top: 5rem;
+    margin-top: 5rem;
+    padding-bottom: 5rem;
+    margin-bottom: 5rem;
+  }
+  
+  .front-page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .front-page-subtext {
+    margin-top: 4rem;
+    font-size: 1.1rem;
+  }
+  
+  .shop-button {
+    display: inline-block;
+    margin-top: 2rem;
+    background-color: #dc3545;
+    color: #f8f9fa;
+    border-radius: 0.3rem;
+    padding: 1.5rem 4rem;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+
+
+
+
+
+
+/* shoppen*/
+.shop-container {
+    padding: 1em 8em;
+
+    margin: 0 auto;
+  }
+  
+  /* Overskrift-styling */
+  .shop-container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Grid med 3 kolonner */
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  
+  /* Hvert enkelt post-kort */
+  .post-item {
+    padding: 0.5rem;
+  }
+  
+  .post-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  /* Titel */
+  .post-title {
+    margin: 0.5rem 0;
+  }
+  .post-title a {
+    text-decoration: none;
+    color: #f8f9fa;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .post-title a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Uddragsteksten */
+  .post-excerpt {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #f8f9fa;
+    line-height: 1.4;
+  }
+  
+  /* "Læs mere" link */
+  .read-more {
+    display: inline-block;
+    margin-left: 0.5rem;
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .read-more:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .post-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .post-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+
+
+
+  
+
+/* enkelt produkt */
+.single-product-content {
+    padding: 2em 8em;
+}
+
+.single-product-content h2.wp-block-heading {
+    margin-top: 0 !important;
+    margin-bottom: 0rem !important;
+    font-size: 2.5rem;
+  }
+  
+  .wp-block-post-navigation-link__arrow-previous,
+  .wp-block-post-navigation-link__arrow-next {
+    color: #ffffff !important;
+  }
+  
+  .post-navigation-link-previous a,
+  .post-navigation-link-next a {
+    color: #ffffff !important;
+  }
+  
+  .single-product-content h2.wp-block-heading strong {
+    font-size: 2.5rem;
+    font-weight: 900;
+
+  }
+  
+  .single-product-content p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+  }
+  
+  .wp-block-button__link {
+    background-color: #4d494a;
+    color: #f8f9fa;
+    border-radius: 0.3rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+  }
+  
+ /* Cart Page Styling */
+.cart-items {
+	margin: 2rem auto;
+	padding: 2rem;
+	max-width: 800px;
+	background-color: #36393e;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  
+  .cart-item {
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+	border-bottom: 1px solid #555;
+	font-size: 1.2rem;
+	color: #f8f9fa;
+  }
+  
+  .cart-item:last-child {
+	border-bottom: none;
+  }
+  
+  .cart-item-name {
+	font-weight: bold;
+  }
+  
+  .cart-item-remove {
+	color: #dc3545;
+	cursor: pointer;
+	text-decoration: underline;
+  }
+  .cart-item-remove:hover {
+	color: #ff5a5f;
+  } 
